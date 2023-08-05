@@ -13,9 +13,9 @@ const main = async () => {
     app.get('/users', async (req, res) => {
         const mongoGetUsersRepository = new MongoGetUsersRepository();
 
-        const getUsersCOntroller = new GetUsercontroller(mongoGetUsersRepository);
+        const getUsersController = new GetUsercontroller(mongoGetUsersRepository);
 
-        const { body, statusCode } = await getUsersCOntroller.handle();
+        const { body, statusCode } = await getUsersController.handle();
         res.send(body).status(statusCode);
     })
 
