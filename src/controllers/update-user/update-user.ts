@@ -42,7 +42,6 @@ export class UpdateUserController implements IUpdateUserController {
             }
 
         } catch (error) {
-            console.log(error)
             return {
                 statusCode: 500,
                 body: "Something went wrong"
