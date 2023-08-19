@@ -15,7 +15,7 @@ export class MongoUpdateUserRepository implements IUpdateUserRepository {
         );
 
         const user = await MongoClient.db
-            .collection<Omit<User, "id">>("Users")
+            .collection<Omit<User, "id">>("users")
             .findOne({ _id: new ObjectId(id) });
 
         if (!user) {
