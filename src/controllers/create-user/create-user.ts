@@ -1,11 +1,11 @@
-import { HttpRequest } from './../protocols';
+import { HttpRequest, IController } from './../protocols';
 import { User } from "../../models/user";
 import { HttpResponse } from "../protocols";
-import { CreateUserParams, ICreateUserController, IcreateUserRepository } from "./protocols";
+import { CreateUserParams, IcreateUserRepository } from "./protocols";
 import validator from 'validator';
 
 
-export class CreateUserController implements ICreateUserController {
+export class CreateUserController implements IController {
     constructor(private readonly createUserRepository: IcreateUserRepository) { }
 
     async handle(httpRequest: HttpRequest<CreateUserParams>): Promise<HttpResponse<User>> {
